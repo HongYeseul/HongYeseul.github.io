@@ -14,11 +14,3 @@ url = "https://github.com/HongYeseul"
 
 [social.params]
 icon = "brand-github"
-
-[[social]]
-identifier = "contact"
-name = "Contact"
-url = "mailto:yeseul.dev@gmail.com"
-
-[social.params]
-icon = "brand-mail"
