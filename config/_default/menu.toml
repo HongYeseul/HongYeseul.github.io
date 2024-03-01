@@ -21,4 +21,4 @@ name = "Contact"
 url = "mailto:yeseul.dev@gmail.com"
 
 [social.params]
-icon = "mail"
+icon = "brand-mail"
