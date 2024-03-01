@@ -9,7 +9,6 @@ paginate = 5
 
 title = "예슬"
 copyright = "Yeseul Hong"
-disqusShortname = "hugo-theme-stack"
 enableEmoji = true
 
 enableRobotsTXT = true
