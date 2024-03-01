@@ -2,5 +2,13 @@
 [en]
 languageName = "English"
 languagedirection = "ltr"
-title = "Example Site"
+title = "yeseul.log"
 weight = 1
+
+[ko]
+languageName = "Korean"
+title = "yeseul.log"
+weight = 1
+
+[ko.params]
+description = ""
