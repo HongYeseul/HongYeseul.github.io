@@ -89,6 +89,5 @@ mapping = "pathname"
 lang = "ko"
 lightTheme = "light"
 darkTheme = "dark"
-reactionsEnabled = "1"
 reactionsEnabled = 1
 emitMetadata = 0
