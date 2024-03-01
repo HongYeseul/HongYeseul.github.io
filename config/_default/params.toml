@@ -80,7 +80,7 @@ enabled = true
 provider = "giscus"
 
 [comments.giscus]
-repo = "HongYeseul/giscus"
+repo = "HongYeseul/HongYeseul.github.io"
 repoID = "R_kgDOLaMsOw"
 category = "Blog comment"
 categoryID = "DIC_kwDOLaMsO84CdpIs"
