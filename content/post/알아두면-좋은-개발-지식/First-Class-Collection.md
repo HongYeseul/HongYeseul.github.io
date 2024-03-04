@@ -2,7 +2,7 @@
 title: 일급 컬렉션(First Class Collection)을 사용하는 이유
 description: 일급 컬렉션을 사용하는 이유와 방법을 알아보자
 slug: first-class-collection
-date: 2023-11-04T00:00:00+0000
+date: "2023-11-04"
 # image: cover.jpg
 categories:
     - 알아두면 좋은 개발 지식

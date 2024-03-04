@@ -2,7 +2,7 @@
 title: DTO를 사용하는 이유와 설계 방법
 description: DTO를 사용하는 이유와 방법을 알아보자
 slug: DTO
-date: 2023-11-11T00:00:00+0000
+date: "2023-11-11"
 # image: cover.jpg
 categories:
     - 알아두면 좋은 개발 지식

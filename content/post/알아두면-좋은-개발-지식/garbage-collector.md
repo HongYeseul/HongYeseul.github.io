@@ -2,7 +2,7 @@
 title: "[Java] JVM의 Garbage Collector"
 description: Garbage Collector에 대해 알아보자
 slug: garbage-collector
-date: 2023-11-25T00:00:00+0000
+date: "2023-11-25"
 # image: cover.jpg
 categories:
     - 알아두면 좋은 개발 지식
