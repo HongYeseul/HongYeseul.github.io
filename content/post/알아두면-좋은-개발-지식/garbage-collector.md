@@ -1,5 +1,5 @@
 ---
-title: [Java] JVM의 Garbage Collector
+title: "[Java] JVM의 Garbage Collector"
 description: Garbage Collector에 대해 알아보자
 slug: garbage-collector
 date: 2023-11-25 00:00:00+0000

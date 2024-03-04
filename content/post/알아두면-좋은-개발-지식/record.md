@@ -1,5 +1,5 @@
 ---
-title: [Java 16] 레코드(record)를 알아보자
+title: "[Java 16] 레코드(record)를 알아보자"
 description: record를 사용하는 이유와 방법을 알아보자
 slug: record
 date: 2023-11-05 00:00:00+0000
