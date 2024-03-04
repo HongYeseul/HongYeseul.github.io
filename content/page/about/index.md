@@ -1,7 +1,7 @@
 ---
 title: About Me
 description: 홍예슬 / Backend Developer
-date: "2023-03-04"
+date: "2024-03-04"
 aliases:
     - about-us
     - about-hugo
