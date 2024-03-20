@@ -2,14 +2,19 @@
 title: "[Java 16] 레코드(record)를 알아보자"
 description: record를 사용하는 이유와 방법을 알아보자
 slug: record
-date: "2023-11-05"
-# image: cover.jpg
+date: 2024-03-20T15:54:55+09:00
+image: 
+math: 
+license: 
+hidden: false
+comments: true
+draft: true
 categories:
     - 알아두면 좋은 개발 지식
 tags:
     - Java
-weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
+
 
 ## record란?
 간단히 설명하자면 "데이터 클래스"이며 순수하게 (불변)데이터를 보유하기 위한 특수한 종류의 클래스다. 이를 사용하면 데이터를 객체 간에 전달하는 작업을 간단하게 만들어준다.

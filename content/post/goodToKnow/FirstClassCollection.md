@@ -1,16 +1,21 @@
 ---
-title: 일급 컬렉션(First Class Collection)을 사용하는 이유
-description: 일급 컬렉션을 사용하는 이유와 방법을 알아보자
+title: "일급 컬렉션(First Class Collection)을 사용하는 이유"
+description: "일급 컬렉션을 사용하는 이유와 방법을 알아보자"
+date: 2024-03-20T15:52:41+09:00
+image: 
+math: 
+license: 
+hidden: false
+comments: true
+draft: true
 slug: first-class-collection
-date: "2023-11-04"
-# image: cover.jpg
 categories:
     - 알아두면 좋은 개발 지식
 tags:
     - Java
     - 설계
-weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
+
 
 ## 일급 컬렉션이 뭔데?
 - 컬렉션과 관련된 로직을 캡슐화하는 디자인 패턴

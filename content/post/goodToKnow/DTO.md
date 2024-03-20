@@ -1,16 +1,21 @@
 ---
-title: DTO를 사용하는 이유와 설계 방법
-description: DTO를 사용하는 이유와 방법을 알아보자
+title: "DTO를 사용하는 이유와 설계 방법"
+description: "DTO를 사용하는 이유와 방법을 알아보자"
+date: 2024-03-20T15:50:30+09:00
+image: 
+math: 
+license: 
+hidden: false
+comments: true
+draft: true
 slug: DTO
-date: "2023-11-11"
-# image: cover.jpg
 categories:
     - 알아두면 좋은 개발 지식
 tags:
     - Java
     - 설계
-weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
+
 
 ## DTO란?
 - ```DTO(Data Transfer Object)```란 계층간 데이터 교환을 하기 위해 사용되는 객체로 Getter/Setter만 가진 클래스

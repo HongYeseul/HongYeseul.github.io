@@ -1,15 +1,20 @@
 ---
 title: "[토이프로젝트] 잔디일기 : 개발하면서 고민했던 부분들"
-description: 현재 해당 프로젝트는 개발 중 단계이므로 지속 추가될 예정
+description: "현재 해당 프로젝트는 개발 중 단계이므로 지속 추가될 예정"
 slug: 잔디일기-고민
-date: "2024-02-05"
-# image: 
+date: 2024-03-20T15:58:28+09:00
+image: 
+math: 
+license: 
+hidden: false
+comments: true
+draft: true
 categories:
     - 프로젝트
 tags:
     - Spring
-weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
+
 
 1. [잔디일기 PR#1: 엔티티 생성시 @GeneratedValue 전략과 연관 관계(@mappedBy)](https://github.com/CHZZK-Study/Grass-Diary-Server/pull/1#issuecomment-1926062247)
 2. [잔디일기 PR#2: 엔티티가 LocalDateTime을 사용할 때 날짜별(LocalDate) 검색하기](https://github.com/CHZZK-Study/Grass-Diary-Server/pull/2#issuecomment-1958489985)
