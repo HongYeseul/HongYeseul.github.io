@@ -3,12 +3,7 @@ title: "[Java] JVM의 Garbage Collector"
 description: "Garbage Collector에 대해 알아보자"
 slug: garbage-collector
 date: 2024-03-20T15:53:55+09:00
-image: 
-math: 
-license: 
-hidden: false
-comments: true
-draft: true
+weight: 1
 categories:
     - 알아두면 좋은 개발 지식
 tags:

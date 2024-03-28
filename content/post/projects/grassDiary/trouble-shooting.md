@@ -3,12 +3,8 @@ title: "[토이프로젝트] 잔디일기 : 개발하면서 고민했던 부분�
 description: "현재 해당 프로젝트는 개발 중 단계이므로 지속 추가될 예정"
 slug: 잔디일기-고민
 date: 2024-03-20T15:58:28+09:00
-image: 
-math: 
-license: 
-hidden: false
-comments: true
-draft: true
+# image: 
+weight: 1
 categories:
     - 프로젝트
 tags:

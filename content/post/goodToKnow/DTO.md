@@ -2,12 +2,7 @@
 title: "DTO를 사용하는 이유와 설계 방법"
 description: "DTO를 사용하는 이유와 방법을 알아보자"
 date: 2024-03-20T15:50:30+09:00
-image: 
-math: 
-license: 
-hidden: false
-comments: true
-draft: true
+weight: 1
 slug: DTO
 categories:
     - 알아두면 좋은 개발 지식

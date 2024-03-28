@@ -2,12 +2,7 @@
 title: "일급 컬렉션(First Class Collection)을 사용하는 이유"
 description: "일급 컬렉션을 사용하는 이유와 방법을 알아보자"
 date: 2024-03-20T15:52:41+09:00
-image: 
-math: 
-license: 
-hidden: false
-comments: true
-draft: true
+weight: 1
 slug: first-class-collection
 categories:
     - 알아두면 좋은 개발 지식

@@ -3,12 +3,7 @@ title: "Spring 웹 계층 간단 정리"
 description: "스프링 부트와 AWS로 혼자 구현하는 웹 서비스 - p.101"
 slug: spring-web
 date: 2024-03-20T15:55:52+09:00
-image: 
-math: 
-license: 
-hidden: false
-comments: true
-draft: true
+weight: 1
 categories:
     - 알아두면 좋은 개발 지식
 tags:

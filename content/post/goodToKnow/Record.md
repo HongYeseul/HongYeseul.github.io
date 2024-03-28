@@ -3,12 +3,7 @@ title: "[Java 16] 레코드(record)를 알아보자"
 description: record를 사용하는 이유와 방법을 알아보자
 slug: record
 date: 2024-03-20T15:54:55+09:00
-image: 
-math: 
-license: 
-hidden: false
-comments: true
-draft: true
+weight: 1
 categories:
     - 알아두면 좋은 개발 지식
 tags:
