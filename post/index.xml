@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 예슬</title><link>https://HongYeseul.github.io/post/</link><description>Recent content in Posts on 예슬</description><generator>Hugo -- gohugo.io</generator><language>ko-KR</language><copyright>Yeseul Hong</copyright><lastBuildDate>Wed, 20 Mar 2024 16:11:59 +0900</lastBuildDate><atom:link href="https://HongYeseul.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>[1] 아는 만큼 보이는 백엔드 개발</title><link>https://HongYeseul.github.io/p/1-%EC%95%84%EB%8A%94-%EB%A7%8C%ED%81%BC-%EB%B3%B4%EC%9D%B4%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C/</link><pubDate>Wed, 20 Mar 2024 16:11:59 +0900</pubDate><guid>https://HongYeseul.github.io/p/1-%EC%95%84%EB%8A%94-%EB%A7%8C%ED%81%BC-%EB%B3%B4%EC%9D%B4%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C/</guid><description>&lt;img src="https://HongYeseul.github.io/post/books/imgs/%EC%95%84%EB%8A%94%EB%A7%8C%ED%81%BC%EB%B3%B4%EC%9D%B4%EB%8A%94.jpg" alt="Featured image of post [1] 아는 만큼 보이는 백엔드 개발" />&lt;p>백엔드 개발자를 준비하면서 어떤 것들을 준비해야하는지 감을 잡을 때, 입문자들을 위한 책이다. 그렇기 때문에 정말 기본지식 정도가 적혀 있었다.&lt;/p>
+&lt;p>한 가지의 서비스를 만들려면 어떤 flow로 백엔드 개발을 하게되는지 알 수 있다. 가볍게 읽기 좋은 책이었다.&lt;/p>
+&lt;hr>
+&lt;h2 id="rest-api-설계-규칙">
+&lt;a href="#rest-api-%ec%84%a4%ea%b3%84-%ea%b7%9c%ec%b9%99">#&lt;/a>
+REST API 설계 규칙
+&lt;/h2>&lt;ul>
+&lt;li>URI에 동사가 아닌 명사 사용하기&lt;/li>
+&lt;li>자원의 계층 관계는 &lt;code>/&lt;/code>로 나타내기&lt;/li>
+&lt;li>소문자만 사용하며 명사와 명사를 구분할 때는 &lt;code>-&lt;/code>를 사용하기
+&lt;ul>
+&lt;li>&lt;code>https://api.sports.com/social_login&lt;/code> - &lt;code>X&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://api.sports.com/social-login&lt;/code> - &lt;code>O&lt;/code>&lt;/li>
+&lt;li>해당 부분은 프로젝트를 진행하면서 놓쳤던 부분이었는데 덕분에 알게 되었다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="graphql">
+&lt;a href="#graphql">#&lt;/a>
+GraphQL
+&lt;/h2>&lt;p>REST API는 중식당처럼 백엔드 개발자가 미리 만들어놓은 API만 요청할 수 있다. 하지만, GraphQL은 마라탕 식당처럼 원하는 데이터를 직업 요청할 수 있다. 이름에 QL(쿼리 언어)이라는 말이 붙은 것도 이 때문이다. 프론트엔드 개발자가 필요한 데이터를 직접 질의하고 개발의 주도권을 가지려 한다면 GraphQL을 도입할 것을 추천한다.&lt;/p>
+&lt;hr>
+&lt;h2 id="도커">
+&lt;a href="#%eb%8f%84%ec%bb%a4">#&lt;/a>
+도커
+&lt;/h2>&lt;p>도커는 컨테이너 기술을 이용해 웹 애플리케이션을 배포하고 실행하는 오픈 소스 플랫폼이다. 웹 애플리케이션을 만들고 실행하는 데 필요한 요소(JDK, JAR 파일 등)를 포함해 하나의 이미지로 만든 후, 이 이미지를 활용해 컨테이너를 생성하고 해당 컨테이너에서 웹 애플리케이션을 실행한다. 도커는 컨테이너 기술의 장점을 최대한 활용할 수 있도록 컨테이너간 통신을 위한 네트워크 구성 기능, 여러 컨테이너를 동시에 관리하기 위한 오케스트레이션 기능, 컨테이너 이미지를 저장하고 관리하는 기능 등을 제공한다.&lt;/p>
+&lt;p>*서버 클러스터에서 다수의 컨테이너를 관리하는 프로세스를 컨테이너 오케스트레이션이라고 한다. 대표적인 컨테이너 오케스트레이션에는 쿠버네티스, 도커 스웜, 아파치 메소스 등이 있다.&lt;/p>
+&lt;hr>
+&lt;h2 id="아키텍처-종류">
+&lt;a href="#%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98-%ec%a2%85%eb%a5%98">#&lt;/a>
+아키텍처 종류
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>모놀리식 아키텍처&lt;/p>
+&lt;ul>
+&lt;li>예: 3티어 아키텍처(표현 계층/논리 계층/데이터 계층)&lt;/li>
+&lt;li>단점
+&lt;ul>
+&lt;li>높은 결합도, 높은 복잡성, 단일 데이터베이스, 전체 시스템의 중단 가능성, 개발 프로세스의 복잡성&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>마이크로서비스 아키텍처&lt;/p>
+&lt;ul>
+&lt;li>여러 개의 작은 서비스 단위로 분해해 각각의 서비스를 독립적으로 개발, 배포, 운영하는 방식&lt;/li>
+&lt;li>장점
+&lt;ul>
+&lt;li>관심사 분리, 분산 데이터 관리, 개발과 배포의 용이성, 높은 탄력성&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>서버리스 아키텍처&lt;/p>
+&lt;ul>
+&lt;li>개발자가 서버를 신경 쓰지 않아도 되는 아키텍처&lt;/li>
+&lt;li>BaaS, FaaS와 같은 클라우드 기반의 서버리스 아키텍처 사용 가능&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a class="link" href="https://product.kyobobook.co.kr/detail/S000211923576" target="_blank" rel="noopener"
+>_[아는 만큼 보이는 백엔드 개발] - &amp;lt;정우현, 이인, 김보인&amp;gt; 中_&lt;/a>&lt;/p></description></item><item><title>[토이프로젝트] 잔디일기 : 개발하면서 고민했던 부분들</title><link>https://HongYeseul.github.io/p/%EC%9E%94%EB%94%94%EC%9D%BC%EA%B8%B0-%EA%B3%A0%EB%AF%BC/</link><pubDate>Wed, 20 Mar 2024 15:58:28 +0900</pubDate><guid>https://HongYeseul.github.io/p/%EC%9E%94%EB%94%94%EC%9D%BC%EA%B8%B0-%EA%B3%A0%EB%AF%BC/</guid><description>&lt;ol>
+&lt;li>&lt;a class="link" href="https://github.com/CHZZK-Study/Grass-Diary-Server/pull/1#issuecomment-1926062247" target="_blank" rel="noopener"
+>잔디일기 PR#1: 엔티티 생성시 @GeneratedValue 전략과 연관 관계(@mappedBy)&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/CHZZK-Study/Grass-Diary-Server/pull/2#issuecomment-1958489985" target="_blank" rel="noopener"
+>잔디일기 PR#2: 엔티티가 LocalDateTime을 사용할 때 날짜별(LocalDate) 검색하기&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/CHZZK-Study/Grass-Diary-Server/pull/2#issuecomment-1963324688" target="_blank" rel="noopener"
+>잔디일기 PR#2: 최신순 혹은 오래된순 일기 5개씩 가져오는 방법(Pageable 사용)&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/CHZZK-Study/Grass-Diary-Server/pull/7" target="_blank" rel="noopener"
+>잔디일기 PR#7: CORS 오류 해결&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>현재 해당 프로젝트는 &lt;code>개발 중&lt;/code> 단계이므로 지속 추가될 예정&lt;/p></description></item><item><title>[새싹콘서트 2024] 우리는 무럭무럭 자랄 일만 남았으니까 (24.01.03. 수)</title><link>https://HongYeseul.github.io/p/ssk2024/</link><pubDate>Wed, 20 Mar 2024 15:57:11 +0900</pubDate><guid>https://HongYeseul.github.io/p/ssk2024/</guid><description>&lt;p>우테코 프리코스가 끝나고, 해당 커뮤니티가 유지되는 것과 관련하여 @햅님께서 프리코스 회고 및 발표, 간단한 네트워킹과 팀 빌딩과 같은 세션(aka. 매칭데이)을 기획하시는 것을 보았다.
+최근 개발자 네트워킹 모임과 다양한 컨퍼런스를 다녀오면서 해당 경험을 토대로 해당 매칭데이에 기여하고 싶다는 생각을 했다.
+마침 @햅님께서 매칭 데이를 위해 TF 팀을 모집하는 것을 보고 바로 지원 하게 되어 __기획팀__으로서 합류하게 되었다.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/a2957bc6-5188-41ed-9b96-954fbdfd5dd2/image.png"
+loading="lazy"
+>&lt;/th>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/5c8678cc-3a23-4cb5-b031-78971e2fe553/image.png"
+loading="lazy"
+>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;/table>
+&lt;h2 id="저는-기획팀으로서-이런-준비를-도왔어요">
+&lt;a href="#%ec%a0%80%eb%8a%94-%ea%b8%b0%ed%9a%8d%ed%8c%80%ec%9c%bc%eb%a1%9c%ec%84%9c-%ec%9d%b4%eb%9f%b0-%ec%a4%80%eb%b9%84%eb%a5%bc-%eb%8f%84%ec%99%94%ec%96%b4%ec%9a%94">#&lt;/a>
+저는 기획팀으로서 이런 준비를 도왔어요.
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>매칭 데이 전반 기획&lt;/p>
+&lt;ul>
+&lt;li>매칭 데이 정식 명칭 정하기 → 새싹콘으로 결정&lt;/li>
+&lt;li>새싹콘 진행 날짜 정하기 → 24.01.03.(수)&lt;/li>
+&lt;li>새싹콘 포스터 기획 방향 정하기 → 디자이너분의 합류&lt;/li>
+&lt;li>새싹콘 랜딩 페이지 기획 돕기
+&lt;ul>
+&lt;li>UX/UI 담당하는 분이 계셔서 그 분과 디자이너 분께서 다 하신 것과 다름없다.&lt;/li>
+&lt;li>페이지 구성 정하기&lt;/li>
+&lt;li>랜딩 페이지 URL 정하기 → &lt;a class="link" href="https://sskcon2024.vercel.app/" target="_blank" rel="noopener"
+>https://sskcon2024.vercel.app/&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://sskcon2024.vercel.app/" target="_blank" rel="noopener"
+>만들어진 해당 렌딩 페이지&lt;/a> → 렌딩페이지 제작팀(프론트) 분들께서 힘 써주셨다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>새싹콘 진행 세션 정하기
+&lt;ul>
+&lt;li>이후 각 세션들을 어디서 진행할지 정하기 위해 미리 공간 사전 답사가 진행 됐었는데, 나는 참여하지 못했다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>우테코 측으로부터 컨펌 받을 기획서 작성 및 컨택
+&lt;ul>
+&lt;li>@햅님과 다른 기획 분께서 진짜 많은 힘을 써주셨다&amp;hellip; 진짜 수고 많이 하셨습니다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>새싹콘 참여 신청 폼 제작, 진행 및 참여자 선정
+&lt;ul>
+&lt;li>총 126분께서 폼 제출을 해주셨고, 1차 신청자 70분 선정하여 메일 발송(메일 발송 자체는 @햅님)&lt;/li>
+&lt;li>메일로 불참 의사 밝힌 분들을 제외하고 새로운 참여자 선정&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>새싹콘 당일에 사용할 PPT 제작
+&lt;ul>
+&lt;li>은 기획팀 다른 분들이 힘써주셨다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>새싹콘 당일에 사용할 명찰 제작
+&lt;ul>
+&lt;li>디자인 자체는 UX/UI를 맡아주신 분께서 해주셨다. 진짜 귀엽게 잘 만들어주셔서 해당 명찰은 당일에도 참여자분들께서 엄청 칭찬을 많이 하셨다.&lt;/li>
+&lt;li>중간중간에 불참 의사를 밝히시는 분들이 꽤나 계셨기 때문에 명찰 제작이 딜레이가 생길까봐 12월 29일까지만 재참여자 선정을 진행했다.
+&lt;ul>
+&lt;li>이 부분은&amp;hellip; 당일 안 오시는 분들이 많았는데 지인 분들 중 당첨이 못 되어 아쉬워 하신 분들이 많아서&amp;hellip; 마음이 많이 아팠다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>새싹콘 당일(1시 진행, 기획 팀들은 10시까지 진행 장소 도착)&lt;/p>
+&lt;ul>
+&lt;li>명찰 제작&lt;/li>
+&lt;li>장소에 세션별 설명 붙이기&lt;/li>
+&lt;li>진행/인원 통제 및 현장 스케치용 사진 촬영&lt;/li>
+&lt;li>뒷정리&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="과정-스케치">
+&lt;a href="#%ea%b3%bc%ec%a0%95-%ec%8a%a4%ec%bc%80%ec%b9%98">#&lt;/a>
+과정 스케치
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>랜딩 페이지 UX/UI 제작(피그마)
+&lt;img src="https://velog.velcdn.com/images/yeseul/post/1f821bec-3da5-45e2-866f-534d4fe54697/image.png"
+loading="lazy"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>새싹 콘서트 참여자용 폼 제작(구글 폼)
+처음에는 그래도 백엔드를 공부하는 기획자들로서 참여자를 신청하는 자체도 랜딩 페이지에서 유저 정보를 받아 직접 만든 서버에 정보를 저장할까했지만 배포까지의 시간도 얼마 남지 않았던 상황이었고, 무료 서버를 어떻게 구성할지 고민하다 결국 전부 폐기하고 구글 폼으로 받기로 했다.
+&lt;img src="https://velog.velcdn.com/images/yeseul/post/5ec2a9ce-d469-48c2-af83-dde9f9992bdd/image.png"
+loading="lazy"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>과정 준비 내용은 노션으로 진행&lt;/p>
+&lt;ul>
+&lt;li>&lt;img src="https://velog.velcdn.com/images/yeseul/post/6109e444-94aa-4c1d-9cc2-b6e6a9cbd591/image.png"
+loading="lazy"
+>&lt;/li>
+&lt;li>&lt;img src="https://velog.velcdn.com/images/yeseul/post/5cdf2bef-5003-4550-bfe6-2f74b88dbceb/image.png"
+loading="lazy"
+>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="당일-스케치">
+&lt;a href="#%eb%8b%b9%ec%9d%bc-%ec%8a%a4%ec%bc%80%ec%b9%98">#&lt;/a>
+당일 스케치
+&lt;/h2>&lt;p>&amp;lt; 명찰 제작 ~ 행사 준비 &amp;gt;&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/c6e0fe80-a520-409a-8af5-1d0e463afcd2/image.jpeg"
+loading="lazy"
+>&lt;/th>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/30e8922b-eee1-4be3-a5c2-38ec0dbcb449/image.jpeg"
+loading="lazy"
+>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/3649eb57-271b-430e-b2c0-53ae40a12960/image.png"
+loading="lazy"
+>&lt;/th>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/a3fb972b-e545-4742-aa28-b74ea8c1e016/image.png"
+loading="lazy"
+>&lt;/th>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/94347a24-9488-47e6-aa23-c3d6818c93a0/image.jpeg"
+loading="lazy"
+>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;/table>
+&lt;p>이때까지만 해도 비도 오고 많이 참여 안해주실 거라 생각해서&amp;hellip; 혹시 10명밖에 안온다면 우리끼리 짧게 하고 끝나고 맛있는 거나 먹으러 가자는 얘기를 했었다.
+근데 웬걸, 생각보다는 자리가 많이 차서 다행이었다.&lt;/p>
+&lt;p>&amp;lt; 오프닝 노트와 연사 세션 &amp;gt;&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/c0446178-30ec-4afb-96fe-af0944efc2f2/image.jpeg"
+loading="lazy"
+>&lt;/th>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/ada26869-c0c1-416b-a819-2b68c7dff81c/image.png"
+loading="lazy"
+>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;img src="https://velog.velcdn.com/images/yeseul/post/f26e60b8-8586-4139-a584-25bcffc0fbbb/image.jpeg"
+loading="lazy"
+>&lt;/td>
+&lt;td>&lt;img src="https://velog.velcdn.com/images/yeseul/post/bf5cf78f-1c0c-46b9-a538-e888b64b6169/image.jpeg"
+loading="lazy"
+>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>첫번째 분과 세번째 분은 급하게 발표 준비를 하셨음에도 불구하고 발표를 정말 잘하셔서 깜짝 놀랐다.&lt;/p>
+&lt;p>사실 나도 발표 제의가 있긴 했는데 발표에 자신이 없어서&amp;hellip; 안하겠다 한거라 조금 아쉬운 기회긴 했다.&lt;/p>
+&lt;p>2번째 발표자 분이셨던 passport님은 ppt부터가 엄청난 준비를 해오신 분이셨다.
+그만큼 기대를 많이 하고 들었음에도 불구하고 멋진 발표를 해주셨다.
+사실 4명의 연사자를 모시고 진행 해야 했던 세션이었으나 3명으로 줄어버려 시간 고민을 많이 했었는데, passport님의 발표를 다들 재밌게 들으셨는지 질답 시간 포함 1시간이 넘게 걸린 덕분에 재미있는 콘서트가 되지 않았나 싶다.
+3번째 발표셨던 지아나님도 기획팀 소속이었는데, 구멍났던 한 자리를 흔쾌히 급하게 맡아주셔서 다행이었다. 특히 지아나님은 금융 기업에 들어 가겠다는 명확한 꿈으로 해당 도메인 지식을 얻기 위해 0부터 10까지 할 수 있는 방법을 전부 동원하여 공부를 하고 계시는 게 정말 대단하셨다.&lt;/p>
+&lt;p>&amp;lt; 네트워킹 세션 &amp;gt;&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/c11bcbde-be59-4aac-879d-d7a097c021ce/image.jpeg"
+loading="lazy"
+>&lt;/th>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/9b82be57-1267-4d45-8ec0-860d3554fc6b/image.jpeg"
+loading="lazy"
+>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;img src="https://velog.velcdn.com/images/yeseul/post/7d922e79-e572-44fe-be4b-727c6f33e0fb/image.jpeg"
+loading="lazy"
+>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>참여자 분들이 생각보다 네트워킹 세션을 잘 즐겨주셨다.
+사실 기획의 입장으로서 많이 지루해지지 않을까 걱정을 되게 많이 했었다.
+그런데 적당하다는 의견도 있었고, 시간이 많이 부족했었다는 얘기도 있어 다행이었다.&lt;/p>
+&lt;p>단체 사진도 찍고 행사 마무리를 했다.&lt;/p>
+&lt;p>&lt;img src="https://velog.velcdn.com/images/yeseul/post/e502fe78-df41-426e-84e6-0071928e9c9c/image.jpeg"
+loading="lazy"
+>&lt;/p>
+&lt;p>우테코 코치 분들(포비/리사)도 흔쾌히 사진을 같이 찍어주셔서 감사했다.&lt;/p>
+&lt;p>우테코 프리코스를 하면서 스터디도 들었었는데, 그 스터디 원들 중 오셨던 분들과도 사진 찍었다!&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/e6b46a18-6c25-4f64-a53e-3a328ecf0334/image.jpeg"
+loading="lazy"
+>&lt;/th>
+&lt;th>&lt;img src="https://velog.velcdn.com/images/yeseul/post/82df2317-d0b5-4df1-9f1e-3abaae3edad1/image.jpeg"
+loading="lazy"
+>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="그-외-주저리">
+&lt;a href="#%ea%b7%b8-%ec%99%b8-%ec%a3%bc%ec%a0%80%eb%a6%ac">#&lt;/a>
+그 외 주저리
+&lt;/h2>&lt;p>지방에 사는 사람으로서&amp;hellip; 10시까지 현장에 도착하기위해 4시 반에 일어나야했고, 5시반에 첫차 타고 출발했다. 현장 도착은 거의 딱 맞게 도착 할 수 있었다.&lt;/p>
+&lt;p>당일 비가 오기도 해서 생각보다 노쇼가 많았다. 약 50명 참여를 예상하고 여유있게 70명을 선발한 것이었는데, 반 정도밖에 오지 않으셨다. 행사 전날까지도 가고싶어하셨던 분들이 많이 계셨으나, 뽑히지 못한 분들이 많은데 그분들에게 미안해서라도 노쇼를 하지 않았어야 한다고 생각한다&amp;hellip;&amp;hellip;ㅎㅠ&lt;/p>
+&lt;p>개인적으로 해당 새싹콘의 기획팀으로서 힘을 내어 많은 분들께 먼저 다가가 말을 걸었어야 했다. 그런데 파워 I인 나로서(&amp;hellip;?)는&amp;hellip; 이번에는 조금 힘들었다. 얘기하는 곳에 잘 끼어 쉽게 친해졌어야 했는데&amp;hellip; 너무 아쉽다. 그래서 많은 분들과 네트워킹을 해보지도 못한 것 같다. &lt;del>이런 점은 여러 경험을 하면 좀 나아질까?&amp;hellip; 😂&lt;/del>&lt;/p>
+&lt;p>&lt;img src="https://velog.velcdn.com/images/yeseul/post/727d5fdd-4857-4c8a-8161-827b1a2c8e2c/image.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>주변에 있었던 몇 분들, 그리고 기획팀장님이셨던 @햅님과 잠시 치맥을 하면서 다음 행사를 짧게 기획 해봤는데 좋은 방향으로 나아갈 수 있으면 좋겠다.&lt;/p>
+&lt;p>일반적인 컨퍼런스나 개발자 네트워킹 모임의 주된 참여자는 &lt;strong>실무자들&lt;/strong> 이기 때문에 참여를 하더라도 개발 새싹으로서 알아 듣지 못하는 고급 지식들이 많이 요구된다. 그렇기 때문에 개발자를 준비하는 입장에서도 쉽게 참여할 수 있는 행사를 만들고 싶었다. 참여자들이 전부 같은 목표를 바라보며 고민을 털어놓고 서로 얘기를 나눌 수 있는 곳이자, 쉽게 접근할 수 있는 공간이 될 수 있도록 고민했다. 행사가 끝난 후 진행된 설문조사에서 해당 부분을 언급하며 만족하고 좋아해주셔서 뿌듯했다. 특히 우테코 코치진 분들이 잠시 구경하러 나오셨을 때 해당 행사를 좋게 봐주신 부분도 있어서 더욱 뜻깊은 자리가 아니었나 싶다.&lt;/p>
+&lt;p>그리고 적지 않은 인원이 모인 만큼 작거나 큰 사고들이 일어날 수 있는데 사고가 일어나지 않아 다행이었다.&lt;/p>
+&lt;p>조금 아쉬웠던 점은 새싹콘이 끝나고 왔었던 사람들과 교류할 수 있는 수단이 없다는 것이다. 예를 들어 카카오 오픈 채팅방 등이 개설되고 유지되었다면 좋았을 것 같다. 구글 폼으로 후기들을 받고 있으니 다음에 비슷한 행사를 개최한다면 보완해서 좀 더 재밌는 행사를 기획하고 싶다 :)&lt;/p></description></item><item><title>Spring 웹 계층 간단 정리</title><link>https://HongYeseul.github.io/p/spring-web/</link><pubDate>Wed, 20 Mar 2024 15:55:52 +0900</pubDate><guid>https://HongYeseul.github.io/p/spring-web/</guid><description>&lt;p>&lt;img src="https://velog.velcdn.com/images/yeseul/post/f6c04a77-1cbe-43fa-a89c-da8fcd95fba7/image.png"
+loading="lazy"
+>&lt;/p>
+&lt;ul>
+&lt;li>Web Layer&lt;/li>
+&lt;/ul>
+&lt;p>컨트롤러와 JSP/Freemaker 등의 뷰 템플릿 영역
+이외에도 필터, 인터셉터, 컨트롤러 어드바이스 등 외부 요청과 응답에 대한 전반적인 영역&lt;/p>
+&lt;ul>
+&lt;li>Service Layer&lt;/li>
+&lt;/ul>
+&lt;p>@Service, @Transactional
+일반적으로 Controller와 Dao의 중간 영역에서 사용&lt;/p>
+&lt;ul>
+&lt;li>Repository Layer&lt;/li>
+&lt;/ul>
+&lt;p>Database와 같이 데이터 저장소에 접근하는 영역
+Dao(Data Access Object) 영역으로 이해하면 쉬움&lt;/p>
+&lt;ul>
+&lt;li>Dtos&lt;/li>
+&lt;/ul>
+&lt;p>Dto(Data Transfer Object)는 계층 간에 데이터 교환을 위한 객체를 얘기하며 Dtos는 이들의 영역을 얘기한다.
+뷰 템플릿 엔진에서 사용될 객체나 Repository Layer에서 결과로 넘겨준 객체 등&lt;/p>
+&lt;ul>
+&lt;li>Domain Model
+도메인이라 불리는 개발 대상을 모든 사람이 동일한 관점에서 이해할 수 있고 공유할 수 있도록 단순화 시킨 것
+@Entity, VO
+비즈니스 처리 담당&lt;/li>
+&lt;/ul></description></item><item><title>[Java 16] 레코드(record)를 알아보자</title><link>https://HongYeseul.github.io/p/record/</link><pubDate>Wed, 20 Mar 2024 15:54:55 +0900</pubDate><guid>https://HongYeseul.github.io/p/record/</guid><description>&lt;h2 id="record란">
+&lt;a href="#record%eb%9e%80">#&lt;/a>
+record란?
+&lt;/h2>&lt;p>간단히 설명하자면 &amp;ldquo;데이터 클래스&amp;quot;이며 순수하게 (불변)데이터를 보유하기 위한 특수한 종류의 클래스다. 이를 사용하면 데이터를 객체 간에 전달하는 작업을 간단하게 만들어준다.&lt;/p>
+&lt;ul>
+&lt;li>JDK14에서 preview로 등장하여 JDK16에서 정식 기능으로 포함&lt;/li>
+&lt;/ul>
+&lt;h2 id="예시">
+&lt;a href="#%ec%98%88%ec%8b%9c">#&lt;/a>
+예시
+&lt;/h2>&lt;p>String 값으로 name, Integer 값으로 age라는 변수를 갖고 있는 &lt;code>User&lt;/code>라는 클래스 구현한다고 가정하자.&lt;/p>
+&lt;ul>
+&lt;li>일반 클래스로 구현한 User 클래스
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">User&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">final&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">final&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Integer&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">User&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Integer&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">name&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">getName&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Integer&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">getAge&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>record를 사용하여 구현한 User 클래스
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">record&lt;/span> &lt;span class="nc">User&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h2 id="특징">
+&lt;a href="#%ed%8a%b9%ec%a7%95">#&lt;/a>
+특징
+&lt;/h2>&lt;ul>
+&lt;li>record 클래스는 final 클래스라 상속할 수 없다.&lt;/li>
+&lt;li>각 멤버 변수는 private final로 정의된다.&lt;/li>
+&lt;li>getter가 자동으로 생성된다.
+&lt;ul>
+&lt;li>각 멤버 변수의 getter는 getXXX()가 아닌, 변수명을 딴 getter가 생성된다.(&lt;code>User.name()&lt;/code>, &lt;code>User.age()&lt;/code>로 사용)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>모든 멤버변수를 인자로 하는 public 생성자를 자동으로 생성하지만,
+기본 생성자는 만들지 않으므로 필요한 경우 직접 구현해야 한다.&lt;/li>
+&lt;li>&lt;code>equals()&lt;/code>, &lt;code>hashcode()&lt;/code>, &lt;code>toString()&lt;/code>을 자동으로 생성한다.&lt;/li>
+&lt;/ul>
+&lt;p>때문에 불필요한 코드들을 쉽게 제거가 가능하다!&lt;/p>
+&lt;hr>
+&lt;h3 id="참고">
+&lt;a href="#%ec%b0%b8%ea%b3%a0">#&lt;/a>
+참고
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://coding-start.tistory.com/355" target="_blank" rel="noopener"
+>https://coding-start.tistory.com/355&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://colevelup.tistory.com/28" target="_blank" rel="noopener"
+>https://colevelup.tistory.com/28&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://s7won.tistory.com/2" target="_blank" rel="noopener"
+>https://s7won.tistory.com/2&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>[Java] JVM의 Garbage Collector</title><link>https://HongYeseul.github.io/p/garbage-collector/</link><pubDate>Wed, 20 Mar 2024 15:53:55 +0900</pubDate><guid>https://HongYeseul.github.io/p/garbage-collector/</guid><description>&lt;h2 id="jvmjava-virtual-machine이란">
+&lt;a href="#jvmjava-virtual-machine%ec%9d%b4%eb%9e%80">#&lt;/a>
+JVM(Java Virtual Machine)이란?
+&lt;/h2>&lt;ul>
+&lt;li>운영체제의 메모리 영역에 접근하여 메모리를 관리하는 프로그램&lt;/li>
+&lt;li>메모리 관리, Garbage Collector 등을 수행하게 된다.&lt;/li>
+&lt;/ul>
+&lt;h2 id="garbage-collector란">
+&lt;a href="#garbage-collector%eb%9e%80">#&lt;/a>
+Garbage Collector란?
+&lt;/h2>&lt;ul>
+&lt;li>동적으로 할당한 메모리 영역 중 사용하지 않는 영역을 탐지하여 해제하는 기능을 맡고 있다.
+&lt;ul>
+&lt;li>C, C++의 경우 사용자가 직접 메모리를 할당 받고, 해제해야 한다.(&lt;code>malloc(), free()&lt;/code>와 같은 함수를 사용)&lt;/li>
+&lt;li>하지만 Java에서는 GC의 기능이 Heap 메모리에서 unreachable한 객체를 자동으로 삭제 해 준다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="참고-heap과-stack은-또-뭐지">
+&lt;a href="#%ec%b0%b8%ea%b3%a0-heap%ea%b3%bc-stack%ec%9d%80-%eb%98%90-%eb%ad%90%ec%a7%80">#&lt;/a>
+(참고) Heap과 Stack은 또 뭐지?
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>Stack
+&lt;strong>정적&lt;/strong>으로 할당한 메모리 영역
+원시 타입의 데이터가 &lt;strong>값&lt;/strong>과 함께 할당, Heap 영역에 생성된 Object 타입의 데이터의 &lt;strong>참조&lt;/strong> 값을 할당한다.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Heap
+&lt;strong>동적&lt;/strong>으로 할당한 메모리 영역
+모든 &lt;strong>Object 타입&lt;/strong>의 &lt;strong>데이터&lt;/strong>가 할당된다.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>코드와 이미지로 이해를 해보자면 다음과 같다.&lt;/p>
+&lt;p>&lt;img src="https://velog.velcdn.com/images/yeseul/post/3cec2b0a-f734-40ee-9c67-dbe2ededbfb1/image.png"
+loading="lazy"
+>&lt;/p>
+&lt;hr>
+&lt;p>다시 돌아와서&amp;hellip;&lt;/p>
+&lt;h2 id="garbage-collector가-수행되는-과정">
+&lt;a href="#garbage-collector%ea%b0%80-%ec%88%98%ed%96%89%eb%90%98%eb%8a%94-%ea%b3%bc%ec%a0%95">#&lt;/a>
+Garbage Collector가 수행되는 과정
+&lt;/h2>&lt;ol>
+&lt;li>Garbage collector가 stack의 모든 변수를 스캔하면서 각각 어떤 객체를 참조하고 있는지 **&lt;span style="color: #6495ED">찾아서 마킹&lt;/span>**한다.&lt;/li>
+&lt;li>Reachable Object가 참조하고 있는 객체도 **&lt;span style="color: #6495ED">찾아서 마킹&lt;/span>**한다.&lt;/li>
+&lt;li>마킹되지 않는 객체를 heap에서 **&lt;span style="color: #6495ED">제거&lt;/span>**한다.&lt;/li>
+&lt;/ol>
+&lt;p>1,2번 과정을 &lt;code>Mark&lt;/code>, 3번 과정을 &lt;code>Sweep&lt;/code>이라고 부르며 이 과정 전체를 &lt;code>Mark and Sweep&lt;/code>이라고 한다.&lt;/p>
+&lt;h2 id="garbage-collection이-일어나는-과정">
+&lt;a href="#garbage-collection%ec%9d%b4-%ec%9d%bc%ec%96%b4%eb%82%98%eb%8a%94-%ea%b3%bc%ec%a0%95">#&lt;/a>
+Garbage Collection이 일어나는 과정
+&lt;/h2>&lt;p>이는 Heap의 구조를 알아야 이해를 할 수 있다.
+Heap의 구조는 다음과 같다.
+&lt;img src="https://velog.velcdn.com/images/yeseul/post/73f32293-3fee-4357-848c-ee6e1c0aca23/image.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>New Generation 영역과 Old Generation으로 나누어져있고,
+New Generation이 Eden/Survival0/Survival1로 나누어 진다.&lt;/p>
+&lt;ol>
+&lt;li>새로운 객체는 &lt;code>Eden&lt;/code>에 할당 된다.&lt;/li>
+&lt;li>&lt;code>Eden&lt;/code> 영역이 전부 사용되면 이때 GC가 발생되는데, 이를 **&lt;span style="color: #6495ED">&lt;code>Minor GC&lt;/code>&lt;/span>**라고 한다.&lt;/li>
+&lt;li>Mark and Sweep이 진행되며 reachable이라 판단된 객체는 &lt;code>Survival 0&lt;/code> 영역으로 옮겨진다.
+&lt;ul>
+&lt;li>이때, 옮겨지면서 Age-bit가 1 증가한다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>Eden&lt;/code>이 또 꽉차게 되면 Minor GC가 다시 실행된다.
+&lt;ul>
+&lt;li>reachable 객체들이 &lt;code>Survival 1&lt;/code>로 이동하며 Age-bit가 1 증가한다.&lt;/li>
+&lt;li>이때, &lt;code>Survival 0&lt;/code>에 있던 객체들도 Survival 1로 이동하며 Age-bit가 1 증가한다.&lt;/li>
+&lt;li>그러므로 항상 Survial 0, 1중 한 곳은 비어 있다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Age-bit가 특정 숫자만큼 높아지면, 오래 쓰이는 객체라고 인식하여 &lt;code>Old Generation&lt;/code>으로 이동하게 되는데, 이를 **&lt;span style="color: #6495ED">&lt;code>Promotion&lt;/code>&lt;/span>**이라고 한다.&lt;/li>
+&lt;li>해당 순서가 반복되며 Old Generation이 전부 차버려 Old Generation 안에서 GC가 일어난다면 이를 **&lt;span style="color: #6495ED">&lt;code>Major GC&lt;/code>&lt;/span>**라고 부른다.
+&lt;ul>
+&lt;li>Mark and Sweep를 이용하는 것은 동일하다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="그림으로-이해하기">
+&lt;a href="#%ea%b7%b8%eb%a6%bc%ec%9c%bc%eb%a1%9c-%ec%9d%b4%ed%95%b4%ed%95%98%ea%b8%b0">#&lt;/a>
+그림으로 이해하기
+&lt;/h3>&lt;p>해당 &lt;code>Minor GC&lt;/code> 순서를 그림으로 이해해보자.
+&lt;img src="https://velog.velcdn.com/images/yeseul/post/f39940f1-9880-4956-80b2-75c985c10b96/image.png"
+loading="lazy"
+>&lt;/p>
+&lt;p>Eden이 가득차면 Survival 0과 Survival 1로 이동하며 Age값을 높인다.
+Age값이 특정 숫자만큼 높아지면, Old Generation으로 이동한다.(Promotion)&lt;/p>
+&lt;p>그리고 Old Generation이 가득차면 &lt;code>Major GC&lt;/code>가 일어나는 것이다.&lt;/p>
+&lt;hr>
+&lt;h2 id="garbage-collector의-장단점">
+&lt;a href="#garbage-collector%ec%9d%98-%ec%9e%a5%eb%8b%a8%ec%a0%90">#&lt;/a>
+Garbage Collector의 장단점
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>장점&lt;/p>
+&lt;ul>
+&lt;li>Memory Leak이 발생되지 않음&lt;/li>
+&lt;li>휴먼 에러 발생 가능성을 낮춤
+&lt;ul>
+&lt;li>예시: 해제된 메모리에 접근을 시도하거나 메모리 이중 해제를 시도하는 등이 있다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>단점&lt;/p>
+&lt;ul>
+&lt;li>성능 저하
+&lt;ul>
+&lt;li>어떤 메모리를 해제해야 할지 검사하고 삭제하는 과정이 필요하기 때문&lt;/li>
+&lt;li>대규모일 경우 비용은 더 증가&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>개발자는 언제 메모리가 해제되는지 모름
+&lt;ul>
+&lt;li>jvm은 GC를 실행시키기 위해 &lt;strong>잠시 실행을 멈추는데&lt;/strong>, 실시간성이 매우 강조된다면 이러한 특징이 적합하지 않을 수 있음&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="jvm은-어떻게-gc와-application을-같이-실행할까">
+&lt;a href="#jvm%ec%9d%80-%ec%96%b4%eb%96%bb%ea%b2%8c-gc%ec%99%80-application%ec%9d%84-%ea%b0%99%ec%9d%b4-%ec%8b%a4%ed%96%89%ed%95%a0%ea%b9%8c">#&lt;/a>
+JVM은 어떻게 GC와 Application을 같이 실행할까?
+&lt;/h2>&lt;ul>
+&lt;li>완전히 같이 실행할 수는 없다.&lt;/li>
+&lt;li>때문에 JVM은 GC를 실행하기 위해 Application 실행을 멈춘다.
+&lt;ul>
+&lt;li>이 과정을 &lt;code>Stop the world&lt;/code>라고 표현한다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>Stop the world&lt;/code> 과정이 짧을 수록 최적화 된 것이다.&lt;/li>
+&lt;/ul>
+&lt;p>여러 방법이 있지만 자주 쓰이는 것만 소개를 한다면 다음과 같다.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>parallel GC&lt;/p>
+&lt;ul>
+&lt;li>JAVA 8에서 기본적으로 쓰이는 GC 방식&lt;/li>
+&lt;li>멀티 코어 환경에서 사용&lt;/li>
+&lt;li>여러개의 thread로 GC를 실행하기 때문에 stop the world 시간이 짧음&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>G1 GC&lt;/p>
+&lt;ul>
+&lt;li>JAVA 9부터 기본적으로 쓰이는 GC 방식&lt;/li>
+&lt;li>heap을 일정 크기의 region으로 잘게 나눠 young generation, old generation으로 나눠 활용&lt;/li>
+&lt;li>이때 region은 그때그때 개수를 알아서 튜닝해줌&lt;/li>
+&lt;li>이에 따라 stop the world 최소화가 가능&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="레퍼런스">
+&lt;a href="#%eb%a0%88%ed%8d%bc%eb%9f%b0%ec%8a%a4">#&lt;/a>
+레퍼런스
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a class="link" href="https://youtu.be/M49_H5FjJ3U?si=hBekl2_5zEzjJazy" target="_blank" rel="noopener"
+>우아한테크 - [10분 테코톡] 주디의 Garbage Collector&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://youtu.be/vZRmCbl871I?si=7uqEXOqzIl2_Y4mP" target="_blank" rel="noopener"
+>우아한테크 - [10분 테코톡] 던의 JVM의 Garbage Collector&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>일급 컬렉션(First Class Collection)을 사용하는 이유</title><link>https://HongYeseul.github.io/p/first-class-collection/</link><pubDate>Wed, 20 Mar 2024 15:52:41 +0900</pubDate><guid>https://HongYeseul.github.io/p/first-class-collection/</guid><description>&lt;h2 id="일급-컬렉션이-뭔데">
+&lt;a href="#%ec%9d%bc%ea%b8%89-%ec%bb%ac%eb%a0%89%ec%85%98%ec%9d%b4-%eb%ad%94%eb%8d%b0">#&lt;/a>
+일급 컬렉션이 뭔데?
+&lt;/h2>&lt;ul>
+&lt;li>컬렉션과 관련된 로직을 캡슐화하는 디자인 패턴&lt;/li>
+&lt;li>&lt;strong>Collection&lt;/strong>을 &lt;strong>Wrapping&lt;/strong> 하면서 그 외의 다른 멤버 변수가 없는 상태&lt;/li>
+&lt;/ul>
+&lt;p>그렇기 때문에 일급 컬렉션은 다음과 같은 요소들로 구성 된다.&lt;/p>
+&lt;ul>
+&lt;li>컬렉션 자료형의 인스턴스 변수&lt;/li>
+&lt;li>컬렉션 자료형의 인스턴스 변수에 잘못된 값이 할당되지 않게 막고, 정상적으로 조작하는 메서드&lt;/li>
+&lt;/ul>
+&lt;p>예를 들면 다음과 같다.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">List&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">User&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">member&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ArrayList&lt;/span>&lt;span class="o">&amp;lt;&amp;gt;&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">member&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">add&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">User&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;길동&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s">&amp;#34;주소1&amp;#34;&lt;/span>&lt;span class="p">));&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">member&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">add&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">User&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;예슬&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s">&amp;#34;주소2&amp;#34;&lt;/span>&lt;span class="p">));&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">member&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">add&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">User&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;지수&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s">&amp;#34;주소3&amp;#34;&lt;/span>&lt;span class="p">));&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>해당 코드를 wrapping 하여 일급 컬렉션을 만들어 보자.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">List&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">User&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">member&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">Member&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">List&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">User&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">user&lt;/span>&lt;span class="p">){&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">member&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">user&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="일급-컬렉션을-사용함으로써-얻는-이점">
+&lt;a href="#%ec%9d%bc%ea%b8%89-%ec%bb%ac%eb%a0%89%ec%85%98%ec%9d%84-%ec%82%ac%ec%9a%a9%ed%95%a8%ec%9c%bc%eb%a1%9c%ec%8d%a8-%ec%96%bb%eb%8a%94-%ec%9d%b4%ec%a0%90">#&lt;/a>
+일급 컬렉션을 사용함으로써 얻는 이점
+&lt;/h2>&lt;ol>
+&lt;li>비지니스에 종속적인 자료구조
+&lt;ul>
+&lt;li>만약 사용하는 프로젝트 여러군데서 User라는 객체를 생성한다고 가정했을 때, User 객체를 생성하는 모든 로직에서 해당 리스트에 대한 검증 코드가 들어가야한다.
+하지만 일급 컬렉션 내 생성자에 검증 로직을 추가 해주면 객체를 쉽게 관리할 수 있다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Collection의 불변성을 보장
+&lt;ul>
+&lt;li>컬렉션의 값을 변경할 수 있는 메소드가 없는 컬렉션을 만들면 된다.
+컬렉션 클래스 내 외부에서 값을 변경할 수 있는 메서드들을 제외하고 구현을 하면 된다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>상태와 행위를 한 곳에서 관리
+&lt;ul>
+&lt;li>일급 컬렉션에는 값과 로직이 함께 존재한다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>이름 있는 컬렉션의 사용
+&lt;ul>
+&lt;li>사용하는 컬렉션에 이름을 붙일 수 있다.
+다른 개발자들과 협업할 때 서로 다른 클래스에서 다른 변수명으로 선언하게 된다면 그냥 변수를 쓰는 것과 다름 없기 때문이다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="주의-외부로-전달시-컬렉션의-변경-막기">
+&lt;a href="#%ec%a3%bc%ec%9d%98-%ec%99%b8%eb%b6%80%eb%a1%9c-%ec%a0%84%eb%8b%ac%ec%8b%9c-%ec%bb%ac%eb%a0%89%ec%85%98%ec%9d%98-%eb%b3%80%ea%b2%bd-%eb%a7%89%ea%b8%b0">#&lt;/a>
+주의! 외부로 전달시 컬렉션의 변경 막기
+&lt;/h2>&lt;p>인스턴스 변수를 그대로 외부에 전달하면, Member 클래스 외부에서 마음대로 멤버들 추가하고 제거해 버릴 수 있다. 그렇게 되면 일급 컬렉션을 사용하는 의미가 사라진다.`&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">class&lt;/span> &lt;span class="nc">System&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">...&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">List&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Member&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">members&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">members&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">members&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">system&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">member&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>이렇게 사용한다면 &lt;code>add()&lt;/code>, &lt;code>clear()&lt;/code> 과 같은 메서드를 사용하여 조작도 가능하다.
+이러한 부작용을 방지하기 위하여 외부로 전달할 때는 컬렉션의 요소를 변경하지 못하게 &lt;code>unmodifiableList&lt;/code> 메서드를 사용하면 된다.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">class&lt;/span> &lt;span class="nc">System&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">...&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">List&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Member&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">members&lt;/span>&lt;span class="p">(){&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">members&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">unmodifiableList&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;h2 id="참고-레퍼런스">
+&lt;a href="#%ec%b0%b8%ea%b3%a0-%eb%a0%88%ed%8d%bc%eb%9f%b0%ec%8a%a4">#&lt;/a>
+참고 레퍼런스
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://jojoldu.tistory.com/412" target="_blank" rel="noopener"
+>일급 컬렉션 (First Class Collection)의 소개와 써야할 이유 - 티스토리, 향로님&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://product.kyobobook.co.kr/detail/S000202521361" target="_blank" rel="noopener"
+>내 코드가 그렇게 이상한가요? - 센바 다이야&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>DTO를 사용하는 이유와 설계 방법</title><link>https://HongYeseul.github.io/p/dto/</link><pubDate>Wed, 20 Mar 2024 15:50:30 +0900</pubDate><guid>https://HongYeseul.github.io/p/dto/</guid><description>&lt;h2 id="dto란">
+&lt;a href="#dto%eb%9e%80">#&lt;/a>
+DTO란?
+&lt;/h2>&lt;ul>
+&lt;li>&lt;code>DTO(Data Transfer Object)&lt;/code>란 계층간 데이터 교환을 하기 위해 사용되는 객체로 Getter/Setter만 가진 클래스&lt;/li>
+&lt;li>주로 View와 Controller 사이에서 활용&lt;/li>
+&lt;li>데이터 전달만을 위한 객체이므로 java-record로 구현하면 좋음&lt;/li>
+&lt;/ul>
+&lt;h2 id="도메인-대신-dto를-사용하면-좋은-이유">
+&lt;a href="#%eb%8f%84%eb%a9%94%ec%9d%b8-%eb%8c%80%ec%8b%a0-dto%eb%a5%bc-%ec%82%ac%ec%9a%a9%ed%95%98%eb%a9%b4-%ec%a2%8b%ec%9d%80-%ec%9d%b4%ec%9c%a0">#&lt;/a>
+도메인 대신 DTO를 사용하면 좋은 이유
+&lt;/h2>&lt;p>DTO 대신 도메인 모델을 계층간 전달에 사용하면 도메인 모델을 캡슐화 하여 보호할 수 있다.
+view마다 필요한 정보가 다른데, 도메인 모델의 경우 필요하지 않은 정보까지 갖고 있기 때문이다.&lt;/p>
+&lt;p>&lt;img src="https://velog.velcdn.com/images/yeseul/post/c3935f79-fc15-4962-afdd-c06b0af20308/image.png"
+loading="lazy"
+>&lt;/p>
+&lt;ul>
+&lt;li>해당 사진은 MVC 패턴&lt;a class="link" href="https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%8D%B8-%EB%B7%B0-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC" target="_blank" rel="noopener"
+>(출처-위키백과)&lt;/a>을 간략하게 나타낸 사진이다.&lt;/li>
+&lt;/ul>
+&lt;p>MVC 패턴에서 Controller는 Model과 View 사이에서 데이터를 주고 받는다.
+이 과정에서 Model을 바로 Controller에게 넘겨준다면 View가 Model의 메서드를 호출하거나 상태를 변경시킬 위험이 존재한다. 또한 Model과 View가 강하게 결합되어 View의 요구사항 변화가 Model에 영향을 끼치기 쉽다.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Model의 속성이 변경되면, View가 전달받을 프론트엔드 코드에도 변경을 유발하기 때문에 상호간 강하게 결합되는 것이다.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>엔티티와 DTO가 항상 동일한 상황이라면 DTO대신 엔티티를 사용해도 되지만 그럴 일은 거의 없다.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>물론 요청 &amp;amp; 응답시마다 DTO를 생성하는 것은 엔티티만 사용했을 경우보다 더 많은 코드를 관리해야 한다. 하지만 엔티티만 썼을 때 발생하는 코드 버그들과 유지보수의 난이도를 생각하면 훨씬 값싼 노동이다.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="코드로-알아보자">
+&lt;a href="#%ec%bd%94%eb%93%9c%eb%a1%9c-%ec%95%8c%ec%95%84%eb%b3%b4%ec%9e%90">#&lt;/a>
+코드로 알아보자.
+&lt;/h2>&lt;ol>
+&lt;li>아래와 같은 엔티티(Model)가 있을 때&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">User&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Long&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>DTO&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">static&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">ResponseDto&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">result&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;결과는 = &amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">ResponseDto&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">User&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">user&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">user&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">getName&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>Controller&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ResponseDto&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">useDTOController&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Long&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">User&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">findedUser&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">userService&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">findOne&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ResponseDto&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">findedUser&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="결과">
+&lt;a href="#%ea%b2%b0%ea%b3%bc">#&lt;/a>
+결과
+&lt;/h3>&lt;p>useDTOController는 엔티티의 결과를 DTO로 변환하여 원하는 결과인 name과 result만 클라이언트에게 반환한다. 하지만 DTO를 사용하지 않게되면 User 객체 전체를 반환하게되어 불필요한 데이터까지 전달하게 되는 것이다.&lt;/p>
+&lt;hr>
+&lt;h3 id="공부한-걸-토대로-이해하고-그려본-유스케이스-설계도">
+&lt;a href="#%ea%b3%b5%eb%b6%80%ed%95%9c-%ea%b1%b8-%ed%86%a0%eb%8c%80%eb%a1%9c-%ec%9d%b4%ed%95%b4%ed%95%98%ea%b3%a0-%ea%b7%b8%eb%a0%a4%eb%b3%b8-%ec%9c%a0%ec%8a%a4%ec%bc%80%ec%9d%b4%ec%8a%a4-%ec%84%a4%ea%b3%84%eb%8f%84">#&lt;/a>
+공부한 걸 토대로 이해하고 그려본 유스케이스 설계도
+&lt;/h3>&lt;p>&lt;img src="https://velog.velcdn.com/images/yeseul/post/172b0cca-3b22-492a-9bb1-46b8718941af/image.png"
+loading="lazy"
+>
+!! 위 그림은 제가 이해한 걸 그린 거라 정확하지 않을 수 있어요. 양해 부탁드립니다 !!
+혹시라도 틀린 점이 있다면 편하게 말씀 해주시면 감사하겠습니다. 🙇‍♀️&lt;/p>
+&lt;h2 id="참고">
+&lt;a href="#%ec%b0%b8%ea%b3%a0">#&lt;/a>
+참고
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://tecoble.techcourse.co.kr/post/2021-04-25-dto-layer-scope/" target="_blank" rel="noopener"
+>https://tecoble.techcourse.co.kr/post/2021-04-25-dto-layer-scope/&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://tristy.tistory.com/54" target="_blank" rel="noopener"
+>https://tristy.tistory.com/54&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://dkswnkk.tistory.com/500" target="_blank" rel="noopener"
+>https://dkswnkk.tistory.com/500&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://ccomccomhan.tistory.com/35" target="_blank" rel="noopener"
+>https://ccomccomhan.tistory.com/35&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

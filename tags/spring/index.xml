@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring on 예슬</title><link>https://HongYeseul.github.io/tags/spring/</link><description>Recent content in Spring on 예슬</description><generator>Hugo -- gohugo.io</generator><language>ko-KR</language><copyright>Yeseul Hong</copyright><lastBuildDate>Wed, 20 Mar 2024 15:58:28 +0900</lastBuildDate><atom:link href="https://HongYeseul.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>[토이프로젝트] 잔디일기 : 개발하면서 고민했던 부분들</title><link>https://HongYeseul.github.io/p/%EC%9E%94%EB%94%94%EC%9D%BC%EA%B8%B0-%EA%B3%A0%EB%AF%BC/</link><pubDate>Wed, 20 Mar 2024 15:58:28 +0900</pubDate><guid>https://HongYeseul.github.io/p/%EC%9E%94%EB%94%94%EC%9D%BC%EA%B8%B0-%EA%B3%A0%EB%AF%BC/</guid><description>&lt;ol>
+&lt;li>&lt;a class="link" href="https://github.com/CHZZK-Study/Grass-Diary-Server/pull/1#issuecomment-1926062247" target="_blank" rel="noopener"
+>잔디일기 PR#1: 엔티티 생성시 @GeneratedValue 전략과 연관 관계(@mappedBy)&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/CHZZK-Study/Grass-Diary-Server/pull/2#issuecomment-1958489985" target="_blank" rel="noopener"
+>잔디일기 PR#2: 엔티티가 LocalDateTime을 사용할 때 날짜별(LocalDate) 검색하기&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/CHZZK-Study/Grass-Diary-Server/pull/2#issuecomment-1963324688" target="_blank" rel="noopener"
+>잔디일기 PR#2: 최신순 혹은 오래된순 일기 5개씩 가져오는 방법(Pageable 사용)&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/CHZZK-Study/Grass-Diary-Server/pull/7" target="_blank" rel="noopener"
+>잔디일기 PR#7: CORS 오류 해결&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>현재 해당 프로젝트는 &lt;code>개발 중&lt;/code> 단계이므로 지속 추가될 예정&lt;/p></description></item><item><title>Spring 웹 계층 간단 정리</title><link>https://HongYeseul.github.io/p/spring-web/</link><pubDate>Wed, 20 Mar 2024 15:55:52 +0900</pubDate><guid>https://HongYeseul.github.io/p/spring-web/</guid><description>&lt;p>&lt;img src="https://velog.velcdn.com/images/yeseul/post/f6c04a77-1cbe-43fa-a89c-da8fcd95fba7/image.png"
+loading="lazy"
+>&lt;/p>
+&lt;ul>
+&lt;li>Web Layer&lt;/li>
+&lt;/ul>
+&lt;p>컨트롤러와 JSP/Freemaker 등의 뷰 템플릿 영역
+이외에도 필터, 인터셉터, 컨트롤러 어드바이스 등 외부 요청과 응답에 대한 전반적인 영역&lt;/p>
+&lt;ul>
+&lt;li>Service Layer&lt;/li>
+&lt;/ul>
+&lt;p>@Service, @Transactional
+일반적으로 Controller와 Dao의 중간 영역에서 사용&lt;/p>
+&lt;ul>
+&lt;li>Repository Layer&lt;/li>
+&lt;/ul>
+&lt;p>Database와 같이 데이터 저장소에 접근하는 영역
+Dao(Data Access Object) 영역으로 이해하면 쉬움&lt;/p>
+&lt;ul>
+&lt;li>Dtos&lt;/li>
+&lt;/ul>
+&lt;p>Dto(Data Transfer Object)는 계층 간에 데이터 교환을 위한 객체를 얘기하며 Dtos는 이들의 영역을 얘기한다.
+뷰 템플릿 엔진에서 사용될 객체나 Repository Layer에서 결과로 넘겨준 객체 등&lt;/p>
+&lt;ul>
+&lt;li>Domain Model
+도메인이라 불리는 개발 대상을 모든 사람이 동일한 관점에서 이해할 수 있고 공유할 수 있도록 단순화 시킨 것
+@Entity, VO
+비즈니스 처리 담당&lt;/li>
+&lt;/ul></description></item></channel></rss>

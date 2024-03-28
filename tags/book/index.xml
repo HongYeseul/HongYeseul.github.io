@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Book on 예슬</title><link>https://HongYeseul.github.io/tags/book/</link><description>Recent content in Book on 예슬</description><generator>Hugo -- gohugo.io</generator><language>ko-KR</language><copyright>Yeseul Hong</copyright><lastBuildDate>Wed, 20 Mar 2024 16:11:59 +0900</lastBuildDate><atom:link href="https://HongYeseul.github.io/tags/book/index.xml" rel="self" type="application/rss+xml"/><item><title>[1] 아는 만큼 보이는 백엔드 개발</title><link>https://HongYeseul.github.io/p/1-%EC%95%84%EB%8A%94-%EB%A7%8C%ED%81%BC-%EB%B3%B4%EC%9D%B4%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C/</link><pubDate>Wed, 20 Mar 2024 16:11:59 +0900</pubDate><guid>https://HongYeseul.github.io/p/1-%EC%95%84%EB%8A%94-%EB%A7%8C%ED%81%BC-%EB%B3%B4%EC%9D%B4%EB%8A%94-%EB%B0%B1%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C/</guid><description>&lt;img src="https://HongYeseul.github.io/post/books/imgs/%EC%95%84%EB%8A%94%EB%A7%8C%ED%81%BC%EB%B3%B4%EC%9D%B4%EB%8A%94.jpg" alt="Featured image of post [1] 아는 만큼 보이는 백엔드 개발" />&lt;p>백엔드 개발자를 준비하면서 어떤 것들을 준비해야하는지 감을 잡을 때, 입문자들을 위한 책이다. 그렇기 때문에 정말 기본지식 정도가 적혀 있었다.&lt;/p>
+&lt;p>한 가지의 서비스를 만들려면 어떤 flow로 백엔드 개발을 하게되는지 알 수 있다. 가볍게 읽기 좋은 책이었다.&lt;/p>
+&lt;hr>
+&lt;h2 id="rest-api-설계-규칙">
+&lt;a href="#rest-api-%ec%84%a4%ea%b3%84-%ea%b7%9c%ec%b9%99">#&lt;/a>
+REST API 설계 규칙
+&lt;/h2>&lt;ul>
+&lt;li>URI에 동사가 아닌 명사 사용하기&lt;/li>
+&lt;li>자원의 계층 관계는 &lt;code>/&lt;/code>로 나타내기&lt;/li>
+&lt;li>소문자만 사용하며 명사와 명사를 구분할 때는 &lt;code>-&lt;/code>를 사용하기
+&lt;ul>
+&lt;li>&lt;code>https://api.sports.com/social_login&lt;/code> - &lt;code>X&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://api.sports.com/social-login&lt;/code> - &lt;code>O&lt;/code>&lt;/li>
+&lt;li>해당 부분은 프로젝트를 진행하면서 놓쳤던 부분이었는데 덕분에 알게 되었다.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="graphql">
+&lt;a href="#graphql">#&lt;/a>
+GraphQL
+&lt;/h2>&lt;p>REST API는 중식당처럼 백엔드 개발자가 미리 만들어놓은 API만 요청할 수 있다. 하지만, GraphQL은 마라탕 식당처럼 원하는 데이터를 직업 요청할 수 있다. 이름에 QL(쿼리 언어)이라는 말이 붙은 것도 이 때문이다. 프론트엔드 개발자가 필요한 데이터를 직접 질의하고 개발의 주도권을 가지려 한다면 GraphQL을 도입할 것을 추천한다.&lt;/p>
+&lt;hr>
+&lt;h2 id="도커">
+&lt;a href="#%eb%8f%84%ec%bb%a4">#&lt;/a>
+도커
+&lt;/h2>&lt;p>도커는 컨테이너 기술을 이용해 웹 애플리케이션을 배포하고 실행하는 오픈 소스 플랫폼이다. 웹 애플리케이션을 만들고 실행하는 데 필요한 요소(JDK, JAR 파일 등)를 포함해 하나의 이미지로 만든 후, 이 이미지를 활용해 컨테이너를 생성하고 해당 컨테이너에서 웹 애플리케이션을 실행한다. 도커는 컨테이너 기술의 장점을 최대한 활용할 수 있도록 컨테이너간 통신을 위한 네트워크 구성 기능, 여러 컨테이너를 동시에 관리하기 위한 오케스트레이션 기능, 컨테이너 이미지를 저장하고 관리하는 기능 등을 제공한다.&lt;/p>
+&lt;p>*서버 클러스터에서 다수의 컨테이너를 관리하는 프로세스를 컨테이너 오케스트레이션이라고 한다. 대표적인 컨테이너 오케스트레이션에는 쿠버네티스, 도커 스웜, 아파치 메소스 등이 있다.&lt;/p>
+&lt;hr>
+&lt;h2 id="아키텍처-종류">
+&lt;a href="#%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98-%ec%a2%85%eb%a5%98">#&lt;/a>
+아키텍처 종류
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>모놀리식 아키텍처&lt;/p>
+&lt;ul>
+&lt;li>예: 3티어 아키텍처(표현 계층/논리 계층/데이터 계층)&lt;/li>
+&lt;li>단점
+&lt;ul>
+&lt;li>높은 결합도, 높은 복잡성, 단일 데이터베이스, 전체 시스템의 중단 가능성, 개발 프로세스의 복잡성&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>마이크로서비스 아키텍처&lt;/p>
+&lt;ul>
+&lt;li>여러 개의 작은 서비스 단위로 분해해 각각의 서비스를 독립적으로 개발, 배포, 운영하는 방식&lt;/li>
+&lt;li>장점
+&lt;ul>
+&lt;li>관심사 분리, 분산 데이터 관리, 개발과 배포의 용이성, 높은 탄력성&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>서버리스 아키텍처&lt;/p>
+&lt;ul>
+&lt;li>개발자가 서버를 신경 쓰지 않아도 되는 아키텍처&lt;/li>
+&lt;li>BaaS, FaaS와 같은 클라우드 기반의 서버리스 아키텍처 사용 가능&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a class="link" href="https://product.kyobobook.co.kr/detail/S000211923576" target="_blank" rel="noopener"
+>_[아는 만큼 보이는 백엔드 개발] - &amp;lt;정우현, 이인, 김보인&amp;gt; 中_&lt;/a>&lt;/p></description></item></channel></rss>
